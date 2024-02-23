@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$color: blue;
+$f_size: 18px;
+
+%btn_global{
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@mixin changeBtn($bg, $padding, $f_size){
+    background-color: $bg;
+    padding: $padding;
+    font-size: $f_size;
+}
+
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .wrapper-box{
+        width: 500px;
+        height: 500px;
+        border: 2px solid ;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        .btn_lg{
+            @extend %btn_global;
+            @include changeBtn(green, 15px 30px,22px)
+        }
+        .btn_md{
+            @extend %btn_global;
+            @include changeBtn(blue, 12px 27px,20px)
+        }
+        .btn_nd{
+            @extend %btn_global;
+            @include changeBtn(crimson, 10px 20px,18px)
+        }
+    }
+
+}
